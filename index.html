@@ -8,6 +8,7 @@
 <meta name="author" content="Jeffrey Michael Harris">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://lmnlpress.com/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -26,22 +27,61 @@
 
 <!-- Structured Data -->
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Jeffrey Michael Harris",
-  "url": "https://lmnlpress.com",
-  "jobTitle": "Artist, Designer, Brand Builder",
-  "description": "Painter, designer, and brand builder based in Portland, OR. Creator of LMNLPRESS.",
-  "address": { "@type": "PostalAddress", "addressLocality": "Portland", "addressRegion": "OR" },
-  "knowsAbout": ["Painting", "Brand Design", "Photography", "Business Development", "Construction Management"],
-  "sameAs": [],
-  "worksFor": {
-    "@type": "Organization",
-    "name": "LMNLPRESS LLC",
-    "url": "https://lmnlpress.com"
+[
+  {
+    "@context": "https://schema.org",
+    "@type": ["Person", "VisualArtist"],
+    "@id": "https://lmnlpress.com/#jeffrey-michael-harris",
+    "name": "Jeffrey Michael Harris",
+    "url": "https://lmnlpress.com",
+    "jobTitle": "Artist, Designer, Brand Builder",
+    "description": "Painter, designer, and brand builder based in Portland, OR. Creator of LMNLPRESS. Works in large-format acrylic and mixed media, with commercial design and brand development for trade clients.",
+    "image": "https://lmnlpress.com/images/LMNL.PRESS.BODY.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Portland",
+      "addressRegion": "OR",
+      "addressCountry": "US"
+    },
+    "knowsAbout": ["Painting", "Acrylic Painting", "Mixed Media Art", "Brand Design", "Logo Design", "Photography", "Business Development", "Construction Management"],
+    "sameAs": [],
+    "worksFor": {
+      "@type": "Organization",
+      "@id": "https://lmnlpress.com/#lmnlpress",
+      "name": "LMNLPRESS LLC",
+      "url": "https://lmnlpress.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://lmnlpress.com/#website",
+    "url": "https://lmnlpress.com",
+    "name": "LMNLPRESS",
+    "description": "The creative practice of Jeffrey Michael Harris — painter, designer, and brand builder based in Portland, OR.",
+    "publisher": { "@id": "https://lmnlpress.com/#lmnlpress" },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://lmnlpress.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ArtGallery",
+    "@id": "https://lmnlpress.com/#gallery",
+    "name": "LMNLPRESS Studio",
+    "url": "https://lmnlpress.com",
+    "description": "Online gallery of original paintings and mixed media works by Jeffrey Michael Harris.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Portland",
+      "addressRegion": "OR",
+      "addressCountry": "US"
+    },
+    "artist": { "@id": "https://lmnlpress.com/#jeffrey-michael-harris" }
   }
-}
+]
 </script>
 
 <link href="https://fonts.cdnfonts.com/css/agenor-neue" rel="stylesheet">
