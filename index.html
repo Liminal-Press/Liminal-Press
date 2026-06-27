@@ -741,6 +741,23 @@ nav {
   .cap-domain { padding: 2rem 1.5rem; }
 }
 
+/* ─── TRADE ─── */
+#trade .page-header { margin-bottom: 0; padding-bottom: 0; }
+#trade .page-header::after { display: none; }
+#trade .studio-intro { border-bottom: none; }
+
+/* ─── TRADE BACKGROUND ─── */
+#trade::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('images/trade/grid.jpg') center/cover no-repeat;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+#trade > * { position: relative; z-index: 1; }
+
 /* ─── SKILLS DROPDOWN ─── */
 .trade-body { display: flex; align-items: flex-start; justify-content: flex-end; gap: 2rem; padding: 0 2rem 1.5rem; }
 .skills-wrap { position: relative; flex-shrink: 0; }
@@ -1582,10 +1599,13 @@ footer::before {
     <div class="work-item">
       <div class="work-gallery">
         <div class="work-gallery-main">
-          <img src="images/Seedless.2.JPG" alt="Seedless" id="gal-seedless">
+          <img src="images/Seedless.1.JPG" alt="Seedless" id="gal-seedless">
         </div>
         <div class="work-gallery-thumbs">
-          <div class="work-gallery-thumb active" onclick="switchImg('gal-seedless','images/Seedless.2.JPG',this)">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-seedless','images/Seedless.1.JPG',this)">
+            <img src="images/Seedless.1.JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-seedless','images/Seedless.2.JPG',this)">
             <img src="images/Seedless.2.JPG" alt="">
           </div>
           <div class="work-gallery-thumb" onclick="switchImg('gal-seedless','images/Seedless.2.JPG',this)">
@@ -1967,7 +1987,7 @@ footer::before {
 </section>
 
 <!-- TRADE -->
-<section class="section" id="trade">
+<section class="section" id="trade" style="position:relative;">
   <div class="page-header">
     <div class="page-tag">CAPABILITY MAP</div>
     <div class="page-title">TRADE</div>
@@ -2278,7 +2298,7 @@ var studioPieces = [
   { name: 'STAY.GOLDEN', dims: '36″ × 36″', imgs: ['images/stay.golden (2).JPG','images/stay.golden (3).JPG','images/stay.golden.JPG','images/stay.golden.mp4'] },
   { name: 'LUNA.SOL', dims: '48″ × 48″', imgs: ['images/luna.sol.1.JPG','images/luna.sol.2.JPG','images/luna.sol.3.JPG'] },
   { name: 'OCEAN.SKY', dims: '24″ × 48″', imgs: ['images/ocean.sky.jpg','images/ocean.sky.2.jpg','images/ocean.sky.3.blue.light.JPG'] },
-  { name: 'SEEDLESS', dims: '48″ × 48″', imgs: ['images/Seedless.2.JPG','images/seedless.JPG','images/seedless.4.jpg'] },
+  { name: 'SEEDLESS', dims: '48″ × 48″', imgs: ['images/Seedless.1.JPG','images/Seedless.2.JPG','images/seedless.JPG','images/seedless.4.jpg'] },
   { name: '111122', dims: '24″ × 24″', imgs: ['images/111122.JPG','images/111122Layer.JPG'] },
   { name: 'AQUANAUT', dims: '24″ × 48″', imgs: ['images/aquanatic-1.jpg','images/aquaniatic-2.jpg','images/aquanatic-3.jpg','images/aquanatic.4.JPG'] }
 ];
