@@ -1913,7 +1913,10 @@ footer::before {
         </div>
       </div>
       <div class="archive-main">
-        <video id="archive-main-vid" src="images/archive/were.still.here.mp4" controls playsinline></video>
+        <div style="padding:56.2% 0 0 0;position:relative;">
+          <iframe id="archive-main-vid" src="https://player.vimeo.com/video/1205007707?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
       </div>
     </div>
   </div>
@@ -2316,10 +2319,10 @@ function studioSelectView(idx) {
 }
 
 var archiveVids = [
-  { src: "images/archive/were.still.here.mp4", label: "WE'RE STILL HERE" },
-  { src: "images/archive/illest.norcal.mp4",     label: "ILLEST NOR CAL" },
-  { src: "images/archive/Lil.diddy.mp4",         label: "LIL DIDDY" },
-  { src: "images/archive/style.monarchs.mp4",         label: "STYLE.MONARCHS" }
+  { src: "https://player.vimeo.com/video/1205007707?badge=0&autopause=0&player_id=0&app_id=58479", label: "WE'RE STILL HERE" },
+  { src: "https://player.vimeo.com/video/1205007777?badge=0&autopause=0&player_id=0&app_id=58479", label: "ILLEST NOR CAL" },
+  { src: "https://player.vimeo.com/video/1205007794?badge=0&autopause=0&player_id=0&app_id=58479", label: "LIL DIDDY" },
+  { src: "https://player.vimeo.com/video/1205007803?badge=0&autopause=0&player_id=0&app_id=58479", label: "STYLE.MONARCHS" }
 ];
 
 function vidShow(idx) {
@@ -2331,12 +2334,8 @@ function vidShow(idx) {
     var active = strip.querySelectorAll('.archive-thumb')[idx];
     if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }
-  var mainVid = document.getElementById('archive-main-vid');
-  if (mainVid) {
-    mainVid.src = archiveVids[idx].src;
-    mainVid.load();
-    mainVid.play().catch(function(){});
-  }
+  var frame = document.getElementById('archive-main-vid');
+  if (frame) frame.src = archiveVids[idx].src;
 }
 
 var capData = {
