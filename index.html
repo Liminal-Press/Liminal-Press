@@ -1,0 +1,2384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LMNLPRESS — Jeffrey Michael Harris | Art, Design & Lifestyle</title>
+<meta name="description" content="LMNLPRESS is the creative practice of Jeffrey Michael Harris — painter, designer, and brand builder based in Portland, OR. Studio paintings, commercial design, photography, and trade work.">
+<meta name="author" content="Jeffrey Michael Harris">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lmnlpress.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lmnlpress.com/">
+<meta property="og:title" content="LMNLPRESS — Jeffrey Michael Harris | Art, Design & Lifestyle">
+<meta property="og:description" content="Studio paintings, brand creation, photography, and trade work by Jeffrey Michael Harris. Portland, OR.">
+<meta property="og:image" content="https://lmnlpress.com/images/LMNL.PRESS.BODY.png">
+<meta property="og:site_name" content="LMNLPRESS">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LMNLPRESS — Jeffrey Michael Harris">
+<meta name="twitter:description" content="Studio paintings, brand creation, photography, and trade work. Portland, OR.">
+<meta name="twitter:image" content="https://lmnlpress.com/images/LMNL.PRESS.BODY.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jeffrey Michael Harris",
+  "url": "https://lmnlpress.com",
+  "jobTitle": "Artist, Designer, Brand Builder",
+  "description": "Painter, designer, and brand builder based in Portland, OR. Creator of LMNLPRESS.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Portland", "addressRegion": "OR" },
+  "knowsAbout": ["Painting", "Brand Design", "Photography", "Business Development", "Construction Management"],
+  "sameAs": [],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "LMNLPRESS LLC",
+    "url": "https://lmnlpress.com"
+  }
+}
+</script>
+
+<link href="https://fonts.cdnfonts.com/css/agenor-neue" rel="stylesheet">
+<style>
+:root {
+  --cr:  #F4F0E6;
+  --cr2: #EDE8DA;
+  --cr3: #E4D8C0;
+  --crb: #D0C4A8;
+  --ink: #1E0C04;
+  --im:  #3A1808;
+  --is:  #6E4828;
+
+  --g1: #5C0808;
+  --g2: #8C1212;
+  --g3: #B81818;
+  --g4: #CC2C10;
+  --g5: #D85010;
+  --g6: #DC7818;
+  --g7: #D09818;
+  --g8: #C8A828;
+  --g9: #E4D890;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+img { -webkit-user-drag: none; user-drag: none; user-select: none; -webkit-user-select: none; }
+
+body {
+  background: var(--cr);
+  color: var(--ink);
+  font-family: 'Agenor Neue', 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Analog scanline + digital grid overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(92,8,8,0.010) 2px, rgba(92,8,8,0.010) 3px),
+    repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(92,8,8,0.004) 80px, rgba(92,8,8,0.004) 81px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── GRADIENT STRIPE ─── */
+.g-stripe {
+  height: 12px;
+  width: 100%;
+  background:
+    linear-gradient(90deg, var(--g1), var(--g2)) 0 0    / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g3), var(--g4)) 0 4px  / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g5), var(--g6)) 0 8px  / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g7), var(--g8)) 0 11px / 100% 1px no-repeat;
+  background-color: transparent;
+}
+
+/* ─── NAV ─── */
+nav {
+  background: var(--cr);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  height: 56px;
+  position: relative;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.28em;
+  background: linear-gradient(90deg, #5C0808, #8C1212, #B81818, #CC2C10, #D85010, #DC7818, #D09818, #C8A828, #E4D890);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  cursor: pointer;
+}
+.nav-menu-trigger {
+  position: absolute; right: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100px;
+  align-items: flex-start;
+}
+.hamburger-line {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+  transition: background 0.2s, transform 0.2s, opacity 0.2s;
+}
+.hamburger-line:nth-child(1) { background: var(--g3); }
+.hamburger-line:nth-child(2) { background: var(--g6); }
+.hamburger-line:nth-child(3) { background: var(--g8); }
+.nav-menu-trigger.open .hamburger-line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-menu-trigger.open .hamburger-line:nth-child(2) { opacity: 0; }
+.nav-menu-trigger.open .hamburger-line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: auto; right: 2rem; min-width: 160px;
+  background: var(--cr);
+  border-top: 1px solid var(--crb);
+  z-index: 200;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 12px rgba(30,12,4,0.08);
+}
+.nav-dropdown.open { display: block; }
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.nav-links li a {
+  display: block;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  font-size: 0.64rem;
+  letter-spacing: 0.26em;
+  color: var(--is);
+  text-decoration: none;
+  border-bottom: 1px solid var(--crb);
+  transition: color 0.2s, background 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+.nav-links li:first-child a { border-top: none; }
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--g1), var(--g3), var(--g5), var(--g8));
+  transform: scaleY(0);
+  transition: transform 0.2s;
+}
+.nav-links li a:hover::after,
+.nav-links li a.active::after { transform: scaleY(1); }
+.nav-links li a:hover,
+.nav-links li a.active { color: var(--im); background: rgba(92,8,8,0.03); }
+
+/* ─── SECTIONS ─── */
+.section { display: none; position: relative; z-index: 1; min-height: calc(100vh - 76px); }
+.section.active { display: block; }
+
+/* ─── HOME ─── */
+#home {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 100vh;
+  gap: 3rem;
+  padding-top: 3rem;
+}
+#home.active { display: flex; }
+#home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/LMNL.PRESS.BODY.png") center/cover no-repeat;
+  opacity: 0.4;
+  z-index: 0;
+}
+#home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(244, 240, 230, 0.42);
+  z-index: 0;
+}
+#home > * { position: relative; z-index: 1; }
+.home-slide-wrap {
+  display: grid;
+  text-align: center;
+  min-height: 5rem;
+  margin-top: 2rem;
+}
+.home-slide {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+}
+.home-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.home-slide.fading { opacity: 0; }
+.slide-word {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  line-height: 1;
+  background: linear-gradient(90deg, #5C0808, #8C1212, #B81818, #CC2C10, #D85010, #DC7818, #D09818, #C8A828);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.slide-sub {
+  font-size: clamp(0.48rem, 1.28vw, 0.72rem);
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: var(--im);
+  margin-top: 0.75rem;
+  max-width: 50ch;
+  line-height: 1.6;
+}
+.home-byline {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+.home-byline-tag {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  color: var(--im);
+}
+.home-byline-name {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.28em;
+  background: linear-gradient(90deg, #5C0808, #8C1212, #B81818, #CC2C10, #D85010, #DC7818, #D09818, #C8A828, #E4D890);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.home-byline-sub {
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: #000;
+}
+/* ─── HOME CATEGORY BUTTONS ─── */
+.home-cat-grid {
+  display: grid;
+  grid-template-columns: 216px;
+  justify-content: center;
+  row-gap: 3rem;
+  width: 100%;
+  padding: 0 2rem 2rem;
+}
+.home-cat-wrap {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95px;
+  transition: transform 0.25s;
+}
+.home-cat-wrap:hover { transform: scale(1.03); z-index: 2; }
+.home-cat-wrap:active { transform: scale(0.95); transition: transform 0.08s; }
+.home-cat-wrap[data-tooltip] { position: relative; }
+.home-cat-wrap[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: 900;
+  font-size: clamp(0.576rem, 1.584vw, 0.888rem);
+  letter-spacing: 0.3em;
+  color: #000;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.18s, transform 0.18s;
+}
+.home-cat-wrap[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+.home-cat-btn {
+  position: relative;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--g1), var(--g5), var(--g8));
+  flex-shrink: 0;
+  opacity: 0.50;
+}
+.home-cat-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.25s;
+}
+.home-cat-wrap:hover .home-cat-btn img { opacity: 0.8; }
+.cat-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-weight: 900;
+  font-size: clamp(0.576rem, 1.584vw, 0.888rem);
+  letter-spacing: 0.3em;
+  color: #000;
+  text-shadow: none;
+  pointer-events: none;
+}
+.cat-icon {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.site-footer {
+  text-align: center;
+  padding: 1.2rem 2rem;
+  font-size: 0.52rem;
+  letter-spacing: 0.28em;
+  color: var(--is);
+  border-top: 1px solid var(--crb);
+}
+/* ─── WORD DEFINITIONS ─── */
+.word-def { max-width: 48ch; text-align: left; }
+.word-term {
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0.12em;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.word-pos {
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  color: var(--g5);
+  margin-bottom: 0.65rem;
+  font-weight: 500;
+  font-style: italic;
+  text-transform: none;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--crb);
+}
+
+/* ─── PAGE HEADERS ─── */
+.page-header {
+  text-align: center;
+  padding: 3.5rem 2.5rem 3rem;
+  position: relative;
+  margin-bottom: 12px;
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -12px; left: 0; right: 0;
+  height: 12px;
+  background:
+    linear-gradient(90deg, var(--g1), var(--g2)) 0 0    / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g3), var(--g4)) 0 4px  / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g5), var(--g6)) 0 8px  / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g7), var(--g8)) 0 11px / 100% 1px no-repeat;
+  background-color: transparent;
+}
+.page-tag { font-size: 0.6rem; letter-spacing: 0.54em; color: var(--g5); margin-bottom: 0.7rem; }
+.page-title {
+  font-weight: 700;
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  letter-spacing: 0.1em;
+  color: var(--im);
+  line-height: 0.9;
+}
+
+/* ─── STUDIO ─── */
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--crb);
+  margin: 1px auto;
+  max-width: 1080px;
+}
+.work-item {
+  background: var(--cr);
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  min-height: 240px;
+}
+/* image gallery */
+.work-gallery {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.work-gallery-main {
+  overflow: hidden;
+  background: var(--cr3);
+  flex: 1;
+  height: clamp(320px, 38vw, 560px);
+}
+.work-gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--cr2);
+  display: block;
+  transition: opacity 0.2s;
+}
+.work-gallery-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 2px;
+  background: var(--crb);
+  flex-shrink: 0;
+  width: 64px;
+  max-height: clamp(320px, 38vw, 560px);
+  overflow-y: auto;
+  align-self: flex-start;
+}
+
+/* ─── STUDIO SLIDESHOW ─── */
+.studio-slideshow { display: flex; flex-direction: column; gap: 4px; }
+.studio-image-row { display: flex; flex-direction: row; align-items: stretch; }
+.studio-main { flex: 1; position: relative; background: var(--cr2); overflow: hidden; }
+.studio-main img, .studio-main video { width: 100%; height: 68vh; object-fit: contain; display: block; background: var(--cr2); }
+
+/* shared vertical thumb column styles */
+.studio-piece-col,
+.studio-view-col,
+.archive-thumb-col {
+  flex-shrink: 0;
+  width: 76px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 2px;
+  max-height: 68vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+.studio-piece-col::-webkit-scrollbar,
+.studio-view-col::-webkit-scrollbar,
+.archive-thumb-col::-webkit-scrollbar { display: none; }
+
+.studio-piece-col { background: var(--cr3); }
+.studio-view-col  { background: var(--crb); }
+.archive-thumb-col { background: var(--crb); }
+
+/* override archive-thumb defaults inside vertical columns */
+.studio-piece-col .archive-thumb,
+.studio-view-col .archive-thumb,
+.archive-thumb-col .archive-thumb {
+  width: 100%;
+  height: 72px;
+  flex-shrink: 0;
+  border-bottom: none;
+  border-right: 2px solid transparent;
+}
+.studio-piece-col .archive-thumb.active,
+.studio-piece-col .archive-thumb:hover,
+.studio-view-col .archive-thumb.active,
+.studio-view-col .archive-thumb:hover,
+.archive-thumb-col .archive-thumb.active,
+.archive-thumb-col .archive-thumb:hover {
+  border-right-color: var(--g4);
+  border-bottom-color: transparent;
+}
+.studio-meta-bar {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.65rem 1rem;
+  background: var(--cr2);
+  border-top: 1px solid var(--crb);
+}
+.studio-piece-name { font-weight: 700; font-size: 1rem; letter-spacing: 0.14em; color: var(--im); }
+.studio-piece-dims { font-size: 0.72rem; letter-spacing: 0.1em; color: var(--g5); }
+.studio-mantra {
+  font-family: serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: var(--im);
+  margin-top: 1.2rem;
+  opacity: 0.75;
+  text-transform: none;
+}
+.studio-strip-label {
+  font-size: 0.5rem;
+  letter-spacing: 0.32em;
+  color: var(--g5);
+  padding: 6px 6px 2px;
+  background: var(--cr);
+  border-top: 1px solid var(--crb);
+}
+.work-gallery-thumb {
+  width: 100%;
+  height: 64px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.45;
+  transition: opacity 0.2s;
+}
+.work-gallery-thumb.active { opacity: 1; outline: 2px solid var(--g5); outline-offset: -2px; }
+.work-gallery-thumb:hover { opacity: 0.82; }
+.work-gallery-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* placeholder for entries without images yet */
+.work-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--cr2);
+}
+.work-item:nth-child(even) .work-thumb { background: var(--cr3); }
+.thumb-bignum {
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 1;
+  background: linear-gradient(90deg, #5C0808, #8C1212, #B81818, #CC2C10, #D85010, #DC7818, #D09818, #C8A828);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.thumb-tag { font-size: 0.56rem; letter-spacing: 0.28em; color: var(--is); }
+.work-info {
+  padding: 2.25rem 2rem 2.25rem calc(2rem + 4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+.work-info::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #5C0808, #8C1212, #B81818, #D85010, #DC7818, #C8A828);
+}
+.work-year { font-size: 0.6rem; letter-spacing: 0.32em; color: var(--g5); margin-bottom: 0.4rem; }
+.studio-intro {
+  text-align: center;
+  padding: 3.5rem 3rem 3.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.4em;
+  line-height: 2.4;
+  color: var(--im);
+  text-transform: uppercase;
+}
+.studio-hero {
+  position: relative;
+  overflow: hidden;
+}
+.studio-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('images/LIMINAL.BRAID.PNG') center/70vw auto no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
+.studio-hero > * { position: relative; z-index: 1; }
+#studio .page-header { margin-bottom: 0; padding-bottom: 0; }
+#studio .page-header::after { display: none; }
+.studio-separator {
+  height: 12px;
+  background:
+    linear-gradient(90deg, var(--g1), var(--g2)) 0 0    / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g3), var(--g4)) 0 4px  / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g5), var(--g6)) 0 8px  / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g7), var(--g8)) 0 11px / 100% 1px no-repeat;
+  background-color: transparent;
+}
+.work-name { font-weight: 600; font-size: 1.1rem; letter-spacing: 0.14em; color: var(--im); margin-bottom: 0.2rem; }
+.work-dims { font-size: 0.85rem; letter-spacing: 0.06em; color: var(--g5); margin-bottom: 0.6rem; }
+.work-desc { font-size: 0.73rem; line-height: 1.75; color: var(--is); letter-spacing: 0.03em; font-weight: 300; }
+
+/* ─── CAPABILITY MAP ─── */
+.cap-grid { display: flex; flex-direction: column; }
+.cap-domain {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 3rem 2.5rem;
+  border-bottom: 1px solid var(--crb);
+  gap: 2rem;
+  align-items: start;
+}
+.cap-domain--has-media { grid-template-columns: 1fr 1fr; }
+.cap-name {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: linear-gradient(90deg, #5C0808, #8C1212, #B81818, #CC2C10, #D85010, #DC7818, #D09818, #C8A828);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.cap-desc {
+  font-size: 0.78rem;
+  line-height: 1.9;
+  color: var(--is);
+  letter-spacing: 0.06em;
+  font-weight: 300;
+  max-width: 55ch;
+  text-transform: none;
+}
+.cap-media { display: flex; flex-direction: column; gap: 4px; }
+.cap-media img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.cap-slide-row { display: flex; flex-direction: row; align-items: stretch; }
+.cap-main { flex: 1; overflow: hidden; background: var(--cr2); }
+.cap-main img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.cap-thumb-col {
+  width: 60px; flex-shrink: 0;
+  display: flex; flex-direction: column; gap: 2px; padding: 2px;
+  background: var(--crb); overflow-y: auto; overflow-x: hidden; scrollbar-width: none;
+}
+.cap-thumb-col::-webkit-scrollbar { display: none; }
+.cap-thumb-col .archive-thumb {
+  width: 100%; height: 52px; flex-shrink: 0;
+  border-bottom: none; border-right: 2px solid transparent;
+}
+.cap-thumb-col .archive-thumb.active,
+.cap-thumb-col .archive-thumb:hover { border-right-color: var(--g4); border-bottom-color: transparent; }
+@media (max-width: 720px) {
+  .cap-domain--has-media { grid-template-columns: 1fr; }
+  .cap-domain { padding: 2rem 1.5rem; }
+}
+
+/* ─── SKILLS DROPDOWN ─── */
+.trade-body { display: flex; align-items: flex-start; justify-content: flex-end; gap: 2rem; padding: 0 2rem 1.5rem; }
+.skills-wrap { position: relative; flex-shrink: 0; }
+.skills-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  background: transparent;
+  border: 1px solid var(--crb);
+  color: var(--im);
+  font-family: inherit;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.skills-btn:hover, .skills-wrap:hover .skills-btn { border-color: var(--g5); color: var(--g5); }
+.skills-caret { font-size: 0.55em; transition: transform 0.2s; }
+.skills-wrap:hover .skills-caret, .skills-btn[aria-expanded="true"] .skills-caret { transform: rotate(180deg); }
+.skills-list {
+  position: absolute; top: calc(100% + 4px); right: 0;
+  min-width: 200px;
+  background: var(--cr);
+  border: 1px solid var(--crb);
+  list-style: none;
+  padding: 0.4rem 0;
+  opacity: 0; visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.15s, transform 0.15s, visibility 0.15s;
+  z-index: 50;
+  box-shadow: 0 6px 18px rgba(30,12,4,0.10);
+}
+.skills-wrap:hover .skills-list, .skills-btn[aria-expanded="true"] + .skills-list {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.skills-list li {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: var(--is);
+  transition: background 0.12s, color 0.12s;
+}
+.skills-list li:hover { background: var(--cr2); color: var(--im); }
+.work-mat { margin-top: 1rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.mat-tag {
+  font-weight: 500;
+  font-size: 0.56rem;
+  letter-spacing: 0.16em;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--g5);
+  color: var(--g5);
+}
+
+/* ─── ARCHIVE ─── */
+.archive-chapter {
+  padding: 2rem 2.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.archive-chapter-label { font-size: 0.6rem; letter-spacing: 0.52em; color: var(--g5); flex-shrink: 0; }
+.archive-chapter-line { flex: 1; height: 1px; background: var(--crb); }
+
+.photo-masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  padding: 0;
+  background: var(--cr3);
+}
+.photo-masonry + .photo-masonry {
+  margin-top: 6px;
+  border-top: 1px solid var(--crb);
+}
+.photo-cell { position: relative; overflow: hidden; cursor: pointer; }
+.photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: transform 0.3s;
+  aspect-ratio: 4/3;
+}
+.photo-cell.tall .photo-placeholder { aspect-ratio: 3/4; }
+.photo-cell.wide { grid-column: span 2; }
+.photo-cell.panorama { grid-column: 1 / -1; margin: 1.5rem 0; }
+.archive-slideshow, .archive-video-slideshow { padding: 1.25rem 0; }
+.archive-slideshow { display: flex; flex-direction: column; gap: 5px; }
+.archive-image-row { display: flex; flex-direction: row; align-items: stretch; }
+.archive-main { flex: 1; position: relative; background: var(--cr2); overflow: hidden; }
+.archive-main img, .archive-main video { width: 100%; height: 68vh; object-fit: contain; display: block; background: var(--cr2); }
+.archive-main img { cursor: pointer; }
+.archive-vid-label {
+  font-size: 0.5rem; letter-spacing: 0.32em; color: var(--g5);
+  padding: 6px 6px 2px; background: var(--cr); border-top: 1px solid var(--crb);
+}
+.archive-main-label { display: none; }
+.archive-video-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  padding: 2rem 0 1rem;
+}
+.archive-video-item { display: flex; flex-direction: column; gap: 0.5rem; }
+.archive-video-item video { width: 100%; display: block; background: var(--cr2); }
+.archive-video-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  color: var(--is);
+  font-weight: 500;
+}
+.archive-strip-wrap { overflow: hidden; }
+.archive-strip {
+  display: flex; gap: 3px;
+  overflow-x: auto; scroll-behavior: smooth;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.archive-strip::-webkit-scrollbar { display: none; }
+.archive-thumb {
+  flex: 0 0 auto; width: 90px; height: 64px;
+  overflow: hidden; cursor: pointer;
+  opacity: 0.45; transition: opacity 0.15s;
+  border-bottom: 2px solid transparent;
+}
+.archive-thumb.active, .archive-thumb:hover { opacity: 1; border-bottom-color: var(--g4); }
+.archive-thumb img, .archive-thumb video { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+.photo-cell.wide .photo-placeholder { aspect-ratio: 8/3; }
+.photo-cell:hover .photo-placeholder { transform: scale(1.03); }
+.ph-big {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1;
+  background: linear-gradient(90deg, #5C0808, #8C1212, #B81818, #CC2C10, #D85010, #DC7818, #D09818, #C8A828);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.move-banner {
+  background: var(--cr2);
+  padding: 3rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.move-quote {
+  font-weight: 300;
+  font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+  color: var(--im);
+  letter-spacing: 0.07em;
+  line-height: 1.12;
+  border-left: 3px solid var(--g4);
+  padding-left: 1.5rem;
+}
+.move-quote strong { color: var(--g4); font-weight: 700; }
+.move-desc { display: flex; flex-direction: column; justify-content: center; gap: 1rem; }
+.move-desc p { font-size: 0.83rem; line-height: 1.82; color: var(--is); letter-spacing: 0.04em; font-weight: 300; }
+.move-practices {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--crb);
+}
+.practice-block {
+  background: var(--cr);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.practice-block::before {
+  content: attr(data-letter);
+  position: absolute;
+  top: -0.5rem; right: 1rem;
+  font-weight: 700;
+  font-size: 8rem;
+  line-height: 1;
+  color: rgba(92,8,8,0.05);
+}
+.practice-name { font-weight: 700; font-size: 1.3rem; letter-spacing: 0.18em; color: var(--im); margin-bottom: 0.6rem; }
+.practice-sub { font-size: 0.65rem; letter-spacing: 0.14em; color: var(--g5); margin-bottom: 0.85rem; font-weight: 500; }
+.practice-text { font-size: 0.76rem; line-height: 1.78; color: var(--is); letter-spacing: 0.03em; font-weight: 300; }
+
+/* ─── COMMERCIAL ─── */
+.industry-layout {
+  display: grid;
+  grid-template-columns: 255px 1fr;
+  min-height: calc(100vh - 76px - 80px);
+}
+.industry-sidebar {
+  background: var(--cr2);
+  padding: 2.5rem 1.75rem;
+  position: relative;
+}
+.industry-sidebar::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #5C0808, #8C1212, #B81818, #D85010, #DC7818, #C8A828);
+}
+.sidebar-section-title {
+  font-size: 0.6rem;
+  letter-spacing: 0.42em;
+  color: var(--g5);
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--crb);
+  font-weight: 600;
+}
+.skill-list { list-style: none; margin-bottom: 2.2rem; }
+.skill-list li {
+  font-size: 0.77rem;
+  letter-spacing: 0.1em;
+  color: var(--is);
+  padding: 0.42rem 0;
+  border-bottom: 1px solid var(--crb);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 300;
+}
+.skill-dot { width: 4px; height: 4px; background: var(--g3); flex-shrink: 0; }
+.industry-main { padding: 2.5rem; background: var(--cr); }
+.timeline-item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--crb);
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 69px; top: 0.4rem; bottom: -2rem;
+  width: 1px;
+  background: var(--crb);
+}
+.timeline-item:last-child::before { display: none; }
+.timeline-year { font-weight: 700; font-size: 0.88rem; color: var(--g4); letter-spacing: 0.05em; padding-top: 0.1rem; text-align: right; padding-right: 1rem; }
+.timeline-marker {
+  position: absolute;
+  left: 64px; top: 0.4rem;
+  width: 11px; height: 11px;
+  border: 2px solid var(--g3);
+  background: var(--cr);
+}
+.timeline-role { font-weight: 700; font-size: 0.95rem; letter-spacing: 0.16em; color: var(--im); margin-bottom: 0.3rem; }
+.timeline-co { font-size: 0.68rem; letter-spacing: 0.2em; color: var(--g5); margin-bottom: 0.55rem; font-weight: 500; }
+.timeline-text { font-size: 0.76rem; line-height: 1.78; color: var(--is); letter-spacing: 0.03em; font-weight: 300; }
+
+/* ─── CONNECT MODAL ─── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(30,12,4,0.65);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: var(--cr);
+  width: 92%;
+  max-width: 860px;
+  max-height: 92vh;
+  overflow-y: auto;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 1.1rem; right: 1.2rem;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  color: var(--is);
+  cursor: pointer;
+  z-index: 10;
+  padding: 0.2rem 0.4rem;
+  transition: color 0.2s;
+}
+.modal-close:hover { color: var(--g3); }
+.modal-header {
+  text-align: center;
+  padding: 3rem 2.5rem 2.5rem;
+  position: relative;
+  margin-bottom: 12px;
+}
+.modal-header::after {
+  content: '';
+  position: absolute;
+  bottom: -12px; left: 0; right: 0;
+  height: 12px;
+  background:
+    linear-gradient(90deg, var(--g1), var(--g2)) 0 0    / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g3), var(--g4)) 0 4px  / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g5), var(--g6)) 0 8px  / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g7), var(--g8)) 0 11px / 100% 1px no-repeat;
+  background-color: transparent;
+}
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 380px;
+}
+.connect-left {
+  background: var(--cr2);
+  padding: 3.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.connect-left::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #5C0808, #8C1212, #B81818, #D85010, #DC7818, #C8A828);
+}
+.connect-tagline {
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  letter-spacing: 0.07em;
+  color: var(--im);
+  line-height: 0.95;
+  margin-bottom: 2rem;
+}
+.connect-info { font-size: 0.79rem; line-height: 1.88; color: var(--is); letter-spacing: 0.04em; font-weight: 300; margin-bottom: 2rem; }
+.contact-line { display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 0; border-top: 1px solid var(--crb); }
+.contact-line:last-child { border-bottom: 1px solid var(--crb); }
+.contact-label { font-weight: 600; font-size: 0.58rem; letter-spacing: 0.32em; color: var(--g5); width: 72px; flex-shrink: 0; }
+.contact-val { font-size: 0.76rem; color: var(--is); letter-spacing: 0.04em; font-weight: 300; }
+.connect-right { background: var(--cr); padding: 3.5rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+.form-row { margin-bottom: 1.25rem; }
+.form-label { display: block; font-weight: 600; font-size: 0.58rem; letter-spacing: 0.32em; color: var(--g5); margin-bottom: 0.4rem; }
+.form-input, .form-textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--crb);
+  padding: 0.5rem 0;
+  font-family: 'Agenor Neue', sans-serif;
+  font-weight: 300;
+  font-size: 0.84rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+.form-input:focus, .form-textarea:focus { border-bottom-color: var(--g3); }
+.form-textarea { min-height: 90px; }
+.form-submit {
+  margin-top: 1.5rem;
+  background: var(--g2);
+  color: var(--cr);
+  border: none;
+  padding: 0.85rem 2.5rem;
+  font-family: 'Agenor Neue', sans-serif;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+  position: relative;
+}
+.form-submit::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--g1), var(--g2), var(--g3), var(--g4), var(--g5), var(--g6), var(--g7), var(--g8));
+}
+.form-submit:hover { background: var(--g3); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--cr2);
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 12px;
+  background:
+    linear-gradient(90deg, var(--g1), var(--g2)) 0 0    / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g3), var(--g4)) 0 4px  / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g5), var(--g6)) 0 8px  / 100% 2px no-repeat,
+    linear-gradient(90deg, var(--g7), var(--g8)) 0 11px / 100% 1px no-repeat;
+  background-color: transparent;
+}
+.footer-logo {
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.28em;
+  background: linear-gradient(90deg, #5C0808, #8C1212, #B81818, #CC2C10, #D85010, #DC7818, #D09818, #C8A828, #E4D890);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.footer-mark { font-size: 0.56rem; letter-spacing: 0.2em; color: var(--crb); }
+.footer-rule { width: 1px; height: 1.2rem; background: var(--crb); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1000px) {
+  .work-item { grid-template-columns: 1fr 280px; }
+  .industry-layout { grid-template-columns: 210px 1fr; }
+}
+
+@media (max-width: 720px) {
+  .work-item { grid-template-columns: 1fr; }
+  .work-gallery-main { aspect-ratio: 4/3; }
+  .work-info { padding: 1.5rem; }
+  .work-info::before { display: none; }
+
+  .industry-layout { grid-template-columns: 1fr; }
+  .industry-sidebar { padding: 1.5rem; }
+  .industry-sidebar::after { display: none; }
+  .modal-body { grid-template-columns: 1fr; }
+  .connect-left::after { display: none; }
+  .move-banner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .nav-top { padding: 0 1rem; }
+  .nav-links li a { padding: 0 0.65rem; font-size: 0.58rem; }
+}
+
+@media (max-width: 480px) {
+  .work-gallery-thumbs { display: none; }
+  .photo-masonry { grid-template-columns: repeat(2, 1fr); }
+  .photo-cell.wide { grid-column: span 2; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-top">
+    <button class="nav-menu-trigger" id="menu-trigger">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <div class="logo" id="logo-home">LMNLPRESS</div>
+  </div>
+  <div class="nav-dropdown" id="nav-dropdown">
+    <ul class="nav-links" id="nav">
+      <li><a href="#" data-page="shop">SHOP</a></li>
+      <li><a href="#" data-page="studio">STUDIO</a></li>
+      <li><a href="#" data-page="trade">TRADE</a></li>
+      <li><a href="#" data-page="style">STYLE</a></li>
+      <li><a href="#" id="connect-trigger">CONNECT</a></li>
+    </ul>
+  </div>
+  <div class="g-stripe"></div>
+</nav>
+
+<!-- HOME -->
+<section class="section active" id="home">
+  <div class="home-byline">
+    <div class="home-byline-name">JEFFREY MICHAEL HARRIS</div>
+    <div class="home-byline-sub">ART . DESIGN . LIFESTYLE</div>
+  </div>
+  <div id="home-slide-wrap" class="home-slide-wrap">
+    <div id="slide-0" class="home-slide active">
+      <div class="slide-word">LIMINAL</div>
+      <div class="slide-sub">A TRANSITORY STATE<br>BETWEEN STIMULUS AND RESPONSE</div>
+    </div>
+    <div id="slide-1" class="home-slide">
+      <div class="slide-word">PRESS</div>
+      <div class="slide-sub">AN INSTRUMENT OF EXPRESSION</div>
+    </div>
+  </div>
+  <div class="home-cat-grid">
+    <div class="home-cat-wrap" onclick="nav('studio')" data-tooltip="STUDIO">
+      <div class="home-cat-btn">
+        <img src="images/111122.JPG" alt="">
+      </div>
+    </div>
+    <div class="home-cat-wrap" onclick="nav('trade')" data-tooltip="TRADE">
+      <div class="home-cat-btn"><img src="images/trade/cafe nene/nene.3.jpg" alt=""></div>
+    </div>
+    <div class="home-cat-wrap" onclick="nav('shop')" data-tooltip="SHOP">
+      <div class="home-cat-btn"><img src="images/shoppe/shop.jpg" alt=""></div>
+    </div>
+    <div class="home-cat-wrap" onclick="nav('style')" data-tooltip="STYLE">
+      <div class="home-cat-btn"><img src="images/archive/honolulu.5.JPG" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO -->
+<section class="section" id="studio">
+  <div class="studio-hero">
+    <div class="page-header">
+      <div class="page-tag">SELECTED PIECES</div>
+      <div class="page-title">STUDIO</div>
+    </div>
+    <div class="studio-intro">
+      <p>All works created by hand using original drawing tools<br>
+      each design emerges as an act of creation &mdash; a freestyle<br>
+      composition finds its own logic through process<br>
+      hand prepared cradled wood panel<br>
+      Golden Heavy Body acrylic<br>
+      iridescent accent shifts with light</p>
+      <p>Soften your gaze and simply be present<br>
+      in a world that demands constant attention<br>
+      these works remark<br>
+      the processing is done<br>
+      take a break</p>
+    <p class="studio-mantra">ॐ नमो नमो महाकलानन्तानन्द नमो नमो ॐ</p>
+    </div>
+  </div>
+  <div class="studio-separator"></div>
+  <div class="studio-slideshow">
+    <div class="studio-image-row">
+      <div class="studio-piece-col" id="studio-piece-strip"></div>
+      <div class="studio-main" id="studio-main-wrap">
+        <img id="studio-main-img" src="images/rising.jpg" alt="RISING">
+        <video id="studio-main-vid" controls playsinline muted style="display:none"></video>
+      </div>
+      <div class="studio-view-col" id="studio-view-strip"></div>
+    </div>
+    <div class="studio-meta-bar">
+      <span id="studio-piece-name" class="studio-piece-name">RISING</span>
+      <span id="studio-piece-dims" class="studio-piece-dims">48&Prime; &times; 48&Prime;</span>
+    </div>
+  </div>
+  <!-- LEGACY WORK-GRID (hidden, JS reads data from studioPieces array) -->
+  <div class="work-grid" style="display:none">
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/rising.jpg" alt="Rising" id="gal-rising">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-rising','images/rising.jpg',this)"><img src="images/rising.jpg" alt=""></div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-rising','images/rising.2.jpg',this)"><img src="images/rising.2.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">RISING</div>
+        <div class="work-dims">48&Prime; &times; 48&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/living.ladder.png" alt="Living Ladder" id="gal-living-ladder">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-living-ladder','images/living.ladder.png',this)"><img src="images/living.ladder.png" alt=""></div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-living-ladder','images/living.ladder (2).jpg',this)"><img src="images/living.ladder (2).jpg" alt=""></div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-living-ladder','images/living.ladder (3).jpg',this)"><img src="images/living.ladder (3).jpg" alt=""></div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-living-ladder','images/living.ladder (4).jpg',this)"><img src="images/living.ladder (4).jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">KOI.LADDER</div>
+        <div class="work-dims">18&Prime; &times; 48&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/tripura.jpg" alt="Tripura" id="gal-tripura">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-tripura','images/tripura.jpg',this)"><img src="images/tripura.jpg" alt=""></div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-tripura','images/tripura.2.jpg',this)"><img src="images/tripura.2.jpg" alt=""></div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-tripura','images/tripura.3.jpg',this)"><img src="images/tripura.3.jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">TRIPURA</div>
+        <div class="work-dims">24&Prime; &times; 24&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/transference.jpg" alt="Transference" id="gal-transference">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-transference','images/transference.jpg',this)"><img src="images/transference.jpg" alt=""></div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-transference','images/transference (2).jpg',this)"><img src="images/transference (2).jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">TRANSFERENCE</div>
+        <div class="work-dims">24&Prime; &times; 48&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/Nonago.jpg" alt="Nonago" id="gal-nonago">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-nonago','images/Nonago.jpg',this)"><img src="images/Nonago.jpg" alt=""></div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-nonago','images/Nonago (2).jpg',this)"><img src="images/Nonago (2).jpg" alt=""></div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-nonago','images/Nonago (3).jpg',this)"><img src="images/Nonago (3).jpg" alt=""></div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">NONAGO</div>
+        <div class="work-dims">&mdash;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/perfect.10s.JPG" alt="Perfect 10s" id="gal-perfect-10s">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-perfect-10s','images/perfect.10s.JPG',this)">
+            <img src="images/perfect.10s.JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-perfect-10s','images/perfect.10s (2).JPG',this)">
+            <img src="images/perfect.10s (2).JPG" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">PERFECT.10</div>
+        <div class="work-dims">36&Prime; &times; 48&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/neon.brown.JPG" alt="Neon Brown" id="gal-neon-brown">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-neon-brown','images/neon.brown.JPG',this)">
+            <img src="images/neon.brown.JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-neon-brown','images/neon.brown (2).JPG',this)">
+            <img src="images/neon.brown (2).JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-neon-brown','images/neon.brown (3).JPG',this)">
+            <img src="images/neon.brown (3).JPG" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">NEON.BROWN</div>
+        <div class="work-dims">24&Prime; &times; 48&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/magic.number.JPG" alt="Magic Number" id="gal-magic-number">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-magic-number','images/magic.number.JPG',this)">
+            <img src="images/magic.number.JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-magic-number','images/magic.number (2).JPG',this)">
+            <img src="images/magic.number (2).JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-magic-number','images/magic.number (3).JPG',this)">
+            <img src="images/magic.number (3).JPG" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">TRI.TOTEM</div>
+        <div class="work-dims">18&Prime; &times; 36&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/from.the.dark.JPG" alt="From the Dark" id="gal-from-the-dark">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-from-the-dark','images/from.the.dark.JPG',this)">
+            <img src="images/from.the.dark.JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-from-the-dark','images/from.the.dark (2).JPG',this)">
+            <img src="images/from.the.dark (2).JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-from-the-dark','images/from.the.dark (3).JPG',this)">
+            <img src="images/from.the.dark (3).JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-from-the-dark','images/from.the.dark (4).JPG',this)">
+            <img src="images/from.the.dark (4).JPG" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">FROM.THE.DARK</div>
+        <div class="work-dims">36&Prime; &times; 48&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/brugmansia.JPG" alt="Brugmansia" id="gal-brugmansia">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-brugmansia','images/brugmansia.JPG',this)">
+            <img src="images/brugmansia.JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-brugmansia','images/brugmansia (2).JPG',this)">
+            <img src="images/brugmansia (2).JPG" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">BRUGMANSIA</div>
+        <div class="work-dims">24&Prime; &times; 24&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/phi.totem.JPG" alt="Phi Totem" id="gal-phi-totem">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-phi-totem','images/phi.totem.JPG',this)">
+            <img src="images/phi.totem.JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-phi-totem','images/phi.totem (2).JPG',this)">
+            <img src="images/phi.totem (2).JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-phi-totem','images/phi.totem (3).JPG',this)">
+            <img src="images/phi.totem (3).JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-phi-totem','images/phi.totem (4).JPG',this)">
+            <img src="images/phi.totem (4).JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-phi-totem','images/phi.totem (5).JPG',this)">
+            <img src="images/phi.totem (5).JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-phi-totem','images/phi.totem (6).JPG',this)">
+            <img src="images/phi.totem (6).JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-phi-totem','images/phi.totem (7).JPG',this)">
+            <img src="images/phi.totem (7).JPG" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">PHI.TOTEM</div>
+        <div class="work-dims">30&Prime; &times; 60&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/stay.golden (2).JPG" alt="Stay Golden" id="gal-stay-golden">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-stay-golden','images/stay.golden (2).JPG',this)">
+            <img src="images/stay.golden (2).JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-stay-golden','images/stay.golden (3).JPG',this)">
+            <img src="images/stay.golden (3).JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-stay-golden','images/stay.golden.JPG',this)">
+            <img src="images/stay.golden.JPG" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">STAY.GOLDEN</div>
+        <div class="work-dims">36&Prime; &times; 36&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/luna.sol.1.JPG" alt="Luna Sol" id="gal-luna-sol">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-luna-sol','images/luna.sol.1.JPG',this)">
+            <img src="images/luna.sol.1.JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-luna-sol','images/luna.sol.2.JPG',this)">
+            <img src="images/luna.sol.2.JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-luna-sol','images/luna.sol.3.JPG',this)">
+            <img src="images/luna.sol.3.JPG" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">LUNA.SOL</div>
+        <div class="work-dims">48&Prime; &times; 48&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/ocean.sky.jpg" alt="Ocean Sky" id="gal-ocean-sky">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-ocean-sky','images/ocean.sky.jpg',this)">
+            <img src="images/ocean.sky.jpg" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-ocean-sky','images/ocean.sky.2.jpg',this)">
+            <img src="images/ocean.sky.2.jpg" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-ocean-sky','images/ocean.sky.3.blue.light.JPG',this)">
+            <img src="images/ocean.sky.3.blue.light.JPG" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">OCEAN.SKY</div>
+        <div class="work-dims">24&Prime; &times; 48&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/Seedless.2.JPG" alt="Seedless" id="gal-seedless">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-seedless','images/Seedless.2.JPG',this)">
+            <img src="images/Seedless.2.JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-seedless','images/Seedless.2.JPG',this)">
+            <img src="images/Seedless.2.JPG" alt="" style="object-position:top;">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-seedless','images/seedless.JPG',this)">
+            <img src="images/seedless.JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-seedless','images/seedless.4.jpg',this)">
+            <img src="images/seedless.4.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">SEEDLESS</div>
+        <div class="work-dims">48&Prime; &times; 48&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/111122.JPG" alt="111122" id="gal-111122">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-111122','images/111122.JPG',this)">
+            <img src="images/111122.JPG" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-111122','images/111122Layer.JPG',this)">
+            <img src="images/111122Layer.JPG" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">111122</div>
+        <div class="work-dims">24&Prime; &times; 24&Prime;</div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-gallery">
+        <div class="work-gallery-main">
+          <img src="images/aquanatic-1.jpg" alt="Aquanautic" id="gal-aquanautic" style="object-fit:contain;background:var(--cr2);">
+        </div>
+        <div class="work-gallery-thumbs">
+          <div class="work-gallery-thumb active" onclick="switchImg('gal-aquanautic','images/aquanatic-1.jpg',this)">
+            <img src="images/aquanatic-1.jpg" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-aquanautic','images/aquaniatic-2.jpg',this)">
+            <img src="images/aquaniatic-2.jpg" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-aquanautic','images/aquanatic-3.jpg',this)">
+            <img src="images/aquanatic-3.jpg" alt="">
+          </div>
+          <div class="work-gallery-thumb" onclick="switchImg('gal-aquanautic','images/aquanatic.4.JPG',this)">
+            <img src="images/aquanatic.4.JPG" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-name">AQUANAUT</div>
+        <div class="work-dims">24&Prime; &times; 48&Prime;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STYLE -->
+<section class="section" id="style">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="page-header">
+    <div class="page-tag">ARCHIVE</div>
+    <div class="page-title">STYLE</div>
+  </div>
+  <div class="archive-slideshow">
+  <div class="archive-image-row">
+    <div class="archive-thumb-col">
+      <div id="archive-strip">
+        <div class="archive-thumb active" data-src="images/archive/anacortes.1.JPG" data-label="ANACORTES.1" onclick="archiveShow(this)">
+          <img src="images/archive/anacortes.1.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/anacortes.3.JPG" data-label="ANACORTES.3" onclick="archiveShow(this)">
+          <img src="images/archive/anacortes.3.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/ashland (2).JPG" data-label="ASHLAND (2)" onclick="archiveShow(this)">
+          <img src="images/archive/ashland (2).JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/ashland (3).JPG" data-label="ASHLAND (3)" onclick="archiveShow(this)">
+          <img src="images/archive/ashland (3).JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/ashland.1.JPG" data-label="ASHLAND.1" onclick="archiveShow(this)">
+          <img src="images/archive/ashland.1.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/budapest (2).JPG" data-label="BUDAPEST (2)" onclick="archiveShow(this)">
+          <img src="images/archive/budapest (2).JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/budapest.JPG" data-label="BUDAPEST" onclick="archiveShow(this)">
+          <img src="images/archive/budapest.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/ecola.JPG" data-label="ECOLA" onclick="archiveShow(this)">
+          <img src="images/archive/ecola.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/ecola.2.JPG" data-label="ECOLA.2" onclick="archiveShow(this)">
+          <img src="images/archive/ecola.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/honolulu1.JPG" data-label="HONOLULU1" onclick="archiveShow(this)">
+          <img src="images/archive/honolulu1.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/honolulu.2.JPG" data-label="HONOLULU.2" onclick="archiveShow(this)">
+          <img src="images/archive/honolulu.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/honolulu.4.JPG" data-label="HONOLULU.4" onclick="archiveShow(this)">
+          <img src="images/archive/honolulu.4.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/honolulu.5.JPG" data-label="HONOLULU.5" onclick="archiveShow(this)">
+          <img src="images/archive/honolulu.5.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/honolulu.6.JPG" data-label="HONOLULU.6" onclick="archiveShow(this)">
+          <img src="images/archive/honolulu.6.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/honolulu.7.JPG" data-label="HONOLULU.7" onclick="archiveShow(this)">
+          <img src="images/archive/honolulu.7.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/honolulu.8.JPG" data-label="HONOLULU.8" onclick="archiveShow(this)">
+          <img src="images/archive/honolulu.8.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/islasanfrancisco.1.JPG" data-label="ISLASANFRANCISCO.1" onclick="archiveShow(this)">
+          <img src="images/archive/islasanfrancisco.1.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/islasanfrancisco.2.JPG" data-label="ISLASANFRANCISCO.2" onclick="archiveShow(this)">
+          <img src="images/archive/islasanfrancisco.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/islasanfrancisco.3.JPG" data-label="ISLASANFRANCISCO.3" onclick="archiveShow(this)">
+          <img src="images/archive/islasanfrancisco.3.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/islasanfrancisco.4.JPG" data-label="ISLASANFRANCISCO.4" onclick="archiveShow(this)">
+          <img src="images/archive/islasanfrancisco.4.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/Jaipur.JPG" data-label="JAIPUR" onclick="archiveShow(this)">
+          <img src="images/archive/Jaipur.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/jaipur.2.JPG" data-label="JAIPUR.2" onclick="archiveShow(this)">
+          <img src="images/archive/jaipur.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/jaipur.3.JPG" data-label="JAIPUR.3" onclick="archiveShow(this)">
+          <img src="images/archive/jaipur.3.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/jaipur.4.JPG" data-label="JAIPUR.4" onclick="archiveShow(this)">
+          <img src="images/archive/jaipur.4.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/Kolkata.JPG" data-label="KOLKATA" onclick="archiveShow(this)">
+          <img src="images/archive/Kolkata.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/kolcata.1.JPG" data-label="KOLCATA.1" onclick="archiveShow(this)">
+          <img src="images/archive/kolcata.1.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/kolkata.2.JPG" data-label="KOLKATA.2" onclick="archiveShow(this)">
+          <img src="images/archive/kolkata.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/kolkata.3.JPG" data-label="KOLKATA.3" onclick="archiveShow(this)">
+          <img src="images/archive/kolkata.3.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/kolkata.4.JPG" data-label="KOLKATA.4" onclick="archiveShow(this)">
+          <img src="images/archive/kolkata.4.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/Kreuzberg.JPG" data-label="KREUZBERG" onclick="archiveShow(this)">
+          <img src="images/archive/Kreuzberg.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/Kreuzber.2.JPG" data-label="KREUZBER.2" onclick="archiveShow(this)">
+          <img src="images/archive/Kreuzber.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/kreuzberg.3.JPG" data-label="KREUZBERG.3" onclick="archiveShow(this)">
+          <img src="images/archive/kreuzberg.3.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/laksmanjula.1.JPG" data-label="LAKSMANJULA.1" onclick="archiveShow(this)">
+          <img src="images/archive/laksmanjula.1.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/laksmanjula.2.JPG" data-label="LAKSMANJULA.2" onclick="archiveShow(this)">
+          <img src="images/archive/laksmanjula.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/laksmanjula.4.JPG" data-label="LAKSMANJULA.4" onclick="archiveShow(this)">
+          <img src="images/archive/laksmanjula.4.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/laksmanjula.5.JPG" data-label="LAKSMANJULA.5" onclick="archiveShow(this)">
+          <img src="images/archive/laksmanjula.5.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/laksmanjula.6.JPG" data-label="LAKSMANJULA.6" onclick="archiveShow(this)">
+          <img src="images/archive/laksmanjula.6.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/luna.JPG" data-label="LUNA" onclick="archiveShow(this)">
+          <img src="images/archive/luna.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/maleakahana.1.JPG" data-label="MALEAKAHANA.1" onclick="archiveShow(this)">
+          <img src="images/archive/maleakahana.1.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/maleakahana.3.JPG" data-label="MALEAKAHANA.3" onclick="archiveShow(this)">
+          <img src="images/archive/maleakahana.3.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/portland.JPG" data-label="PORTLAND" onclick="archiveShow(this)">
+          <img src="images/archive/portland.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/portland.2.JPG" data-label="PORTLAND.2" onclick="archiveShow(this)">
+          <img src="images/archive/portland.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/portland.3.JPG" data-label="PORTLAND.3" onclick="archiveShow(this)">
+          <img src="images/archive/portland.3.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/portland.5.JPG" data-label="PORTLAND.5" onclick="archiveShow(this)">
+          <img src="images/archive/portland.5.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/sacredvalley.1.JPG" data-label="SACREDVALLEY.1" onclick="archiveShow(this)">
+          <img src="images/archive/sacredvalley.1.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/sacredvalley.2.JPG" data-label="SACREDVALLEY.2" onclick="archiveShow(this)">
+          <img src="images/archive/sacredvalley.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/sacredvalley.3.JPG" data-label="SACREDVALLEY.3" onclick="archiveShow(this)">
+          <img src="images/archive/sacredvalley.3.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/sacredvalley.5.JPG" data-label="SACREDVALLEY.5" onclick="archiveShow(this)">
+          <img src="images/archive/sacredvalley.5.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/sacredvalley.12.JPG" data-label="SACREDVALLEY.12" onclick="archiveShow(this)">
+          <img src="images/archive/sacredvalley.12.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/sacredvalley.14.JPG" data-label="SACREDVALLEY.14" onclick="archiveShow(this)">
+          <img src="images/archive/sacredvalley.14.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/sacredvalley.15.PNG" data-label="SACREDVALLEY.15" onclick="archiveShow(this)">
+          <img src="images/archive/sacredvalley.15.PNG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/seattle.JPG" data-label="SEATTLE" onclick="archiveShow(this)">
+          <img src="images/archive/seattle.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/Seattle.1.JPG" data-label="SEATTLE.1" onclick="archiveShow(this)">
+          <img src="images/archive/Seattle.1.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/seattle.2.JPG" data-label="SEATTLE.2" onclick="archiveShow(this)">
+          <img src="images/archive/seattle.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/seattle.4.JPG" data-label="SEATTLE.4" onclick="archiveShow(this)">
+          <img src="images/archive/seattle.4.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/seattle.5.JPG" data-label="SEATTLE.5" onclick="archiveShow(this)">
+          <img src="images/archive/seattle.5.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/spain (2).JPG" data-label="SPAIN (2)" onclick="archiveShow(this)">
+          <img src="images/archive/spain (2).JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/spain (3).JPG" data-label="SPAIN (3)" onclick="archiveShow(this)">
+          <img src="images/archive/spain (3).JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/spain.JPG" data-label="SPAIN" onclick="archiveShow(this)">
+          <img src="images/archive/spain.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/taghazout.2.JPG" data-label="TAGHAZOUT.2" onclick="archiveShow(this)">
+          <img src="images/archive/taghazout.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/taghazout.3.JPG" data-label="TAGHAZOUT.3" onclick="archiveShow(this)">
+          <img src="images/archive/taghazout.3.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/tarapoto.1.JPG" data-label="TARAPOTO.1" onclick="archiveShow(this)">
+          <img src="images/archive/tarapoto.1.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/tarapoto.2.JPG" data-label="TARAPOTO.2" onclick="archiveShow(this)">
+          <img src="images/archive/tarapoto.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/thebay (2).JPG" data-label="THEBAY (2)" onclick="archiveShow(this)">
+          <img src="images/archive/thebay (2).JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/thebay (3).JPG" data-label="THEBAY (3)" onclick="archiveShow(this)">
+          <img src="images/archive/thebay (3).JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/thebay.JPG" data-label="THEBAY" onclick="archiveShow(this)">
+          <img src="images/archive/thebay.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/thebay.3.JPG" data-label="THEBAY.3" onclick="archiveShow(this)">
+          <img src="images/archive/thebay.3.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/Uttarkashi.1.JPG" data-label="UTTARKASHI.1" onclick="archiveShow(this)">
+          <img src="images/archive/Uttarkashi.1.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/uttarkashi.2.JPG" data-label="UTTARKASHI.2" onclick="archiveShow(this)">
+          <img src="images/archive/uttarkashi.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/uttarkashi.4.JPG" data-label="UTTARKASHI.4" onclick="archiveShow(this)">
+          <img src="images/archive/uttarkashi.4.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/uttarkashi.5.JPG" data-label="UTTARKASHI.5" onclick="archiveShow(this)">
+          <img src="images/archive/uttarkashi.5.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/uttarkashi.6.JPG" data-label="UTTARKASHI.6" onclick="archiveShow(this)">
+          <img src="images/archive/uttarkashi.6.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/uttarkashi.7.JPG" data-label="UTTARKASHI.7" onclick="archiveShow(this)">
+          <img src="images/archive/uttarkashi.7.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/uttarkashi.8.JPG" data-label="UTTARKASHI.8" onclick="archiveShow(this)">
+          <img src="images/archive/uttarkashi.8.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/uttarkashi.9.JPG" data-label="UTTARKASHI.9" onclick="archiveShow(this)">
+          <img src="images/archive/uttarkashi.9.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/uttarkashi.10.JPG" data-label="UTTARKASHI.10" onclick="archiveShow(this)">
+          <img src="images/archive/uttarkashi.10.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/wahkeena.JPEG" data-label="WAHKEENA" onclick="archiveShow(this)">
+          <img src="images/archive/wahkeena.JPEG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/wahkeena.JPG" data-label="WAHKEENA" onclick="archiveShow(this)">
+          <img src="images/archive/wahkeena.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/wahkeena.2.JPG" data-label="WAHKEENA.2" onclick="archiveShow(this)">
+          <img src="images/archive/wahkeena.2.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/IMG_6072.JPG" data-label="IMG_6072" onclick="archiveShow(this)">
+          <img src="images/archive/IMG_6072.JPG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/IMG_8279.PNG" data-label="IMG_8279" onclick="archiveShow(this)">
+          <img src="images/archive/IMG_8279.PNG" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" data-src="images/archive/seattle.png" data-label="SEATTLE.PNG" onclick="archiveShow(this)">
+          <img src="images/archive/seattle.png" alt="" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <div class="archive-main">
+      <img id="archive-main-img" src="images/archive/anacortes.1.JPG" alt="">
+    </div>
+  </div>
+</div>
+  <div class="g-stripe" style="margin: 1.5rem 0;"></div>
+  <div class="archive-video-slideshow">
+    <div class="archive-image-row">
+      <div class="archive-thumb-col" id="archive-vid-strip">
+        <div class="archive-thumb active" onclick="vidShow(0)">
+          <img src="images/archive/were.still.here.jpg" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" onclick="vidShow(1)">
+          <img src="images/archive/illest.norcal.jpg" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" onclick="vidShow(2)">
+          <img src="images/archive/lil.diddy.jpg" alt="" loading="lazy">
+        </div>
+        <div class="archive-thumb" onclick="vidShow(3)">
+          <img src="images/archive/style.monarchs.jpg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="archive-main">
+        <video id="archive-main-vid" src="images/archive/were.still.here.mp4" controls playsinline></video>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- TRADE -->
+<section class="section" id="trade">
+  <div class="page-header">
+    <div class="page-tag">CAPABILITY MAP</div>
+    <div class="page-title">TRADE</div>
+  </div>
+  <div class="studio-intro">
+    <p>A record of what can be built, activated, and executed.</p>
+  </div>
+  <div class="trade-body">
+    <div class="skills-wrap">
+      <button class="skills-btn" aria-expanded="false" aria-controls="skills-list-trade">
+        Skills <span class="skills-caret">&#9660;</span>
+      </button>
+      <ul class="skills-list" id="skills-list-trade" aria-hidden="true">
+        <li>Wood &amp; Metal Shop</li>
+        <li>Framing &amp; Structural</li>
+        <li>Windows PC</li>
+        <li>DAW &mdash; Digital Audio Workstation</li>
+        <li>AI-Compatible Workflow</li>
+        <li>Adobe Creative Suite</li>
+        <li>Design</li>
+        <li>Brand Creation</li>
+        <li>Networking</li>
+        <li>Leadership</li>
+        <li>Communication</li>
+        <li>Project Management</li>
+        <li>Client Relations</li>
+      </ul>
+    </div>
+  </div>
+  <div class="studio-separator"></div>
+  <div class="cap-grid">
+
+    <div class="cap-domain cap-domain--has-media">
+      <div class="cap-content">
+        <div class="cap-name">SPACE</div>
+        <div class="cap-desc">Venue management, spatial layout, artistic installation, and construction coordination. From raw square footage to activated environment — concept through execution. Equipment acquisition, contractor oversight, electrical, plumbing, and operational build-out.</div>
+      </div>
+      <div class="cap-slide-row">
+        <div class="cap-thumb-col" id="nene-strip">
+          <div class="archive-thumb active" onclick="capShow('nene',0)"><img src="images/trade/cafe nene/nene.3.jpg" alt="" loading="lazy"></div>
+          <div class="archive-thumb" onclick="capShow('nene',1)"><img src="images/trade/cafe nene/nene.1.png" alt="" loading="lazy"></div>
+          <div class="archive-thumb" onclick="capShow('nene',2)"><img src="images/trade/cafe nene/nene.2.png" alt="" loading="lazy"></div>
+          <div class="archive-thumb" onclick="capShow('nene',3)"><img src="images/trade/cafe nene/nene.4.png" alt="" loading="lazy"></div>
+          <div class="archive-thumb" onclick="capShow('nene',4)"><img src="images/trade/cafe nene/nene.5.png" alt="" loading="lazy"></div>
+        </div>
+        <div class="cap-main"><img id="nene-main" src="images/trade/cafe nene/nene.3.jpg" alt=""></div>
+      </div>
+    </div>
+
+    <div class="cap-domain cap-domain--has-media">
+      <div class="cap-content">
+        <div class="cap-name">BRAND</div>
+        <div class="cap-desc">Visual identity, brand creation, packaging, and signage systems. Built from scratch for real businesses operating in the real world — logo, collateral, environmental graphics, and product design conceived and executed as cohesive systems.</div>
+      </div>
+      <div class="cap-slide-row">
+        <div class="cap-thumb-col" id="uplift-strip">
+          <div class="archive-thumb active" onclick="capShow('uplift',0)"><img src="images/trade/Island Uplift/island.uplift.storefront.png" alt="" loading="lazy"></div>
+          <div class="archive-thumb" onclick="capShow('uplift',1)"><img src="images/trade/Island Uplift/island.uplift.softgels.jar.JPG" alt="" loading="lazy"></div>
+          <div class="archive-thumb" onclick="capShow('uplift',2)"><img src="images/trade/Island Uplift/island.uplift.softgel.label.png" alt="" loading="lazy"></div>
+          <div class="archive-thumb" onclick="capShow('uplift',3)"><img src="images/trade/Island Uplift/Island.Uplift.10PK.Label.Final.Draft.png" alt="" loading="lazy"></div>
+          <div class="archive-thumb" onclick="capShow('uplift',4)"><img src="images/trade/Island Uplift/island.uplift.loyalty.1.png" alt="" loading="lazy"></div>
+          <div class="archive-thumb" onclick="capShow('uplift',5)"><img src="images/trade/Island Uplift/island.uplift (2).JPG" alt="" loading="lazy"></div>
+        </div>
+        <div class="cap-main"><img id="uplift-main" src="images/trade/Island Uplift/island.uplift.storefront.png" alt=""></div>
+      </div>
+    </div>
+
+    <div class="cap-domain">
+      <div class="cap-content">
+        <div class="cap-name">EVENT</div>
+        <div class="cap-desc">Event production, exhibition curation, and cultural programming. Independent and institutional — from private gatherings to large-scale branded cultural activations. Logistics, talent, installation, and atmosphere coordinated and executed.</div>
+      </div>
+    </div>
+
+    <div class="cap-domain">
+      <div class="cap-content">
+        <div class="cap-name">PRODUCTION</div>
+        <div class="cap-desc">Project management across physical goods manufacturing. Coordinating timelines, vendors, contractors, materials, and people from specification to delivery. Applied in apparel manufacturing and multi-trade construction environments.</div>
+      </div>
+    </div>
+
+    <div class="cap-domain">
+      <div class="cap-content">
+        <div class="cap-name">CULTURE</div>
+        <div class="cap-desc">Marketing strategy and cultural activation at the intersection of sport, art, and community. Developed early-stage programming during a foundational period in experiential marketing. Audience, environment, and experience — all one discipline.</div>
+      </div>
+    </div>
+
+    <div class="cap-domain">
+      <div class="cap-content">
+        <div class="cap-name">CRAFT</div>
+        <div class="cap-desc">Art framing, wood and metal fabrication, and physical making. The work that happens with tools, not computers. Structural framing, shop work, and the finishing details that no project manager can delegate away.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SHOP -->
+<section class="section" id="shop">
+  <div class="page-header">
+    <div class="page-tag">ORIGINAL WORKS &amp; PRINTS</div>
+    <div class="page-title">SHOP</div>
+  </div>
+  <div style="padding: 4rem 2.5rem; text-align: center; color: var(--is); font-size: 0.78rem; letter-spacing: 0.18em;">
+    COMING SOON — ORIGINALS, PRINTS, AND FABRICATED OBJECTS.
+  </div>
+</section>
+
+<!-- CONNECT MODAL -->
+<div id="connect-modal" class="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeConnect()">✕ CLOSE</button>
+    <div class="modal-header">
+      <div class="page-tag">REACH OUT</div>
+      <div class="page-title">CONNECT</div>
+    </div>
+    <div class="modal-body">
+      <div class="connect-left">
+        <div class="connect-tagline">LET'S<br><span class="g-word">BUILD</span><br>SOMETHING.</div>
+        <p class="connect-info">COMMISSION, COLLABORATION, CONVERSATION — ALL WELCOME. RESPONSE WITHIN 48 HOURS.</p>
+        <div class="contact-line"><span class="contact-label">EMAIL</span><span class="contact-val">LMNLPRESS@PROTON.ME</span></div>
+        <div class="contact-line"><span class="contact-label">BASE</span><span class="contact-val">PORTLAND, OR</span></div>
+      </div>
+      <div class="connect-right">
+        <form action="mailto:LMNLPRESS@proton.me" method="post" enctype="text/plain">
+          <div class="form-row"><label class="form-label">NAME</label><input class="form-input" type="text" name="name" placeholder="YOUR NAME" /></div>
+          <div class="form-row"><label class="form-label">EMAIL</label><input class="form-input" type="email" name="email" placeholder="YOUR EMAIL" /></div>
+          <div class="form-row"><label class="form-label">SUBJECT</label><input class="form-input" type="text" name="subject" placeholder="COMMISSION / COLLAB / OTHER" /></div>
+          <div class="form-row"><label class="form-label">MESSAGE</label><textarea class="form-textarea" name="message" placeholder="TELL ME WHAT YOU'RE WORKING ON."></textarea></div>
+          <button class="form-submit" type="submit">SEND IT →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">LMNLPRESS</div>
+  <div class="footer-rule"></div>
+  <div class="footer-mark">PORTLAND, OR — ALL RIGHTS RESERVED</div>
+</footer>
+
+<script>
+function nav(page) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-links a[data-page]').forEach(a => a.classList.remove('active'));
+  document.getElementById(page).classList.add('active');
+  const link = document.querySelector(`.nav-links a[data-page="${page}"]`);
+  if (link) link.classList.add('active');
+  window.scrollTo(0, 0);
+  if (page === 'style') { archiveStartTimer(); }
+  else { archivePause(); }
+  if (page === 'home') { homeSlideStart(); } else { homeSlideStop(); }
+  if (page === 'studio') { setTimeout(studioInit, 50); }
+}
+
+function openConnect() {
+  document.getElementById('connect-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  /* re-trigger modal header stripe animation */
+  const hdr = document.querySelector('.modal-header');
+  if (hdr) {
+    hdr.classList.remove('active');
+    void hdr.offsetWidth;
+    hdr.classList.add('active');
+  }
+}
+
+function closeConnect() {
+  document.getElementById('connect-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* image gallery switcher */
+function switchImg(id, src, thumb) {
+  document.getElementById(id).src = src;
+  thumb.closest('.work-gallery-thumbs').querySelectorAll('.work-gallery-thumb').forEach(t => t.classList.remove('active'));
+  thumb.classList.add('active');
+}
+
+/* close on overlay click */
+document.getElementById('connect-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeConnect();
+});
+
+/* close on ESC */
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeConnect(); });
+
+/* block right-click save on images */
+document.addEventListener('contextmenu', function(e) {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+
+/* logo -> home */
+document.getElementById('logo-home').addEventListener('click', () => nav('home'));
+
+/* menu dropdown toggle */
+const menuTrigger = document.getElementById('menu-trigger');
+const navDropdown = document.getElementById('nav-dropdown');
+menuTrigger.addEventListener('click', function(e) {
+  e.stopPropagation();
+  const open = navDropdown.classList.toggle('open');
+  menuTrigger.classList.toggle('open', open);
+});
+document.addEventListener('click', function() {
+  navDropdown.classList.remove('open');
+  menuTrigger.classList.remove('open');
+});
+navDropdown.addEventListener('click', e => e.stopPropagation());
+
+/* nav page links */
+document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    nav(a.dataset.page);
+    navDropdown.classList.remove('open');
+    menuTrigger.classList.remove('open');
+  });
+});
+
+/* connect trigger in nav */
+document.getElementById('connect-trigger').addEventListener('click', e => {
+  e.preventDefault();
+  navDropdown.classList.remove('open');
+  menuTrigger.classList.remove('open');
+  openConnect();
+});
+
+function archiveShow(el) {
+  const strip = document.getElementById('archive-strip');
+  strip.querySelectorAll('.archive-thumb').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('archive-main-img').src = el.dataset.src;
+  const lbl = document.getElementById('archive-main-label');
+  if (lbl) lbl.textContent = el.dataset.label;
+  var col = el.closest('.archive-thumb-col');
+  if (col) {
+    var colRect = col.getBoundingClientRect();
+    var elRect = el.getBoundingClientRect();
+    col.scrollTop += elRect.top - colRect.top - (col.clientHeight - el.offsetHeight) / 2;
+  }
+  if (typeof archiveStartTimer === 'function') archiveStartTimer();
+}
+
+let archiveTimer = null;
+let archiveIsPlaying = false;
+function archiveAdvance() {
+  const strip = document.getElementById('archive-strip');
+  if (!strip) return;
+  const thumbs = Array.from(strip.querySelectorAll('.archive-thumb'));
+  const idx = thumbs.findIndex(t => t.classList.contains('active'));
+  if (idx < 0) return;
+  archiveShow(thumbs[(idx + 1) % thumbs.length]);
+}
+function archiveStartTimer() {
+  if (archiveIsPlaying) return;
+  archiveIsPlaying = true;
+  if (archiveTimer) clearInterval(archiveTimer);
+  archiveTimer = setInterval(archiveAdvance, 2000);
+}
+function archivePause() {
+  archiveIsPlaying = false;
+  if (archiveTimer) { clearInterval(archiveTimer); archiveTimer = null; }
+}
+function archiveToggle() {
+  if (archiveIsPlaying) { archivePause(); } else { archiveStartTimer(); }
+}
+
+const HOME_SLIDE_COUNT = 2;
+let homeSlideIdx = 0;
+let homeSlideTimer = null;
+const HOME_SLIDE_INTERVAL = 4500;
+const HOME_SLIDE_FADE = 700;
+function homeSlideNext() {
+  const current = document.getElementById('slide-' + homeSlideIdx);
+  if (!current) return;
+  current.classList.add('fading');
+  setTimeout(() => {
+    current.classList.remove('active', 'fading');
+    homeSlideIdx = (homeSlideIdx + 1) % HOME_SLIDE_COUNT;
+    const next = document.getElementById('slide-' + homeSlideIdx);
+    if (next) next.classList.add('active');
+  }, HOME_SLIDE_FADE);
+}
+function homeSlideStart() {
+  if (homeSlideTimer) return;
+  homeSlideTimer = setInterval(homeSlideNext, HOME_SLIDE_INTERVAL);
+}
+function homeSlideStop() {
+  if (homeSlideTimer) { clearInterval(homeSlideTimer); homeSlideTimer = null; }
+}
+homeSlideStart();
+
+// ─── STUDIO SLIDESHOW ───
+var studioPieces = [
+  { name: 'RISING', dims: '48″ × 48″', imgs: ['images/rising.jpg','images/rising.2.jpg'] },
+  { name: 'KOI.LADDER', dims: '18″ × 48″', imgs: ['images/living.ladder.png','images/living.ladder (2).jpg','images/living.ladder (3).jpg','images/living.ladder (4).jpg'] },
+  { name: 'TRIPURA', dims: '24″ × 24″', imgs: ['images/tripura.jpg','images/tripura.2.jpg','images/tripura.3.jpg'] },
+  { name: 'TRANSFERENCE', dims: '24″ × 48″', imgs: ['images/transference.jpg','images/transference (2).jpg','images/transference(3).mp4'] },
+  { name: 'NONAGO', dims: '—', imgs: ['images/Nonago.jpg','images/Nonago (2).jpg','images/Nonago (3).jpg'] },
+  { name: 'PERFECT.10', dims: '36″ × 48″', imgs: ['images/perfect.10s.JPG','images/perfect.10s (2).JPG'] },
+  { name: 'NEON.BROWN', dims: '24″ × 48″', imgs: ['images/neon.brown.JPG','images/neon.brown (2).JPG','images/neon.brown (3).JPG'] },
+  { name: 'TRI.TOTEM', dims: '18″ × 36″', imgs: ['images/magic.number.JPG','images/magic.number (2).JPG','images/magic.number (3).JPG'] },
+  { name: 'FROM.THE.DARK', dims: '36″ × 48″', imgs: ['images/from.the.dark.JPG','images/from.the.dark (2).JPG','images/from.the.dark (3).JPG','images/from.the.dark (4).JPG'] },
+  { name: 'BRUGMANSIA', dims: '24″ × 24″', imgs: ['images/brugmansia.JPG','images/brugmansia (2).JPG'] },
+  { name: 'PHI.TOTEM', dims: '30″ × 60″', imgs: ['images/phi.totem.JPG','images/phi.totem (2).JPG','images/phi.totem (3).JPG','images/phi.totem (4).JPG','images/phi.totem (5).JPG','images/phi.totem (6).JPG','images/phi.totem (7).JPG'] },
+  { name: 'STAY.GOLDEN', dims: '36″ × 36″', imgs: ['images/stay.golden (2).JPG','images/stay.golden (3).JPG','images/stay.golden.JPG','images/stay.golden.mp4'] },
+  { name: 'LUNA.SOL', dims: '48″ × 48″', imgs: ['images/luna.sol.1.JPG','images/luna.sol.2.JPG','images/luna.sol.3.JPG'] },
+  { name: 'OCEAN.SKY', dims: '24″ × 48″', imgs: ['images/ocean.sky.jpg','images/ocean.sky.2.jpg','images/ocean.sky.3.blue.light.JPG'] },
+  { name: 'SEEDLESS', dims: '48″ × 48″', imgs: ['images/Seedless.2.JPG','images/seedless.JPG','images/seedless.4.jpg'] },
+  { name: '111122', dims: '24″ × 24″', imgs: ['images/111122.JPG','images/111122Layer.JPG'] },
+  { name: 'AQUANAUT', dims: '24″ × 48″', imgs: ['images/aquanatic-1.jpg','images/aquaniatic-2.jpg','images/aquanatic-3.jpg','images/aquanatic.4.JPG'] }
+];
+var studioCurrent = 0;
+var studioView = 0;
+
+function studioInit() {
+  var pieceStrip = document.getElementById('studio-piece-strip');
+  if (!pieceStrip) return;
+  pieceStrip.innerHTML = '';
+  studioPieces.forEach(function(piece, i) {
+    var t = document.createElement('div');
+    t.className = 'archive-thumb' + (i === 0 ? ' active' : '');
+    t.onclick = (function(idx) { return function() { studioSelectPiece(idx); }; })(i);
+    t.innerHTML = '<img src="' + piece.imgs[0] + '" alt="" loading="lazy">';
+    pieceStrip.appendChild(t);
+  });
+  studioSelectPiece(0);
+}
+
+function studioShowMedia(src) {
+  var img = document.getElementById('studio-main-img');
+  var vid = document.getElementById('studio-main-vid');
+  if (!img || !vid) return;
+  var isVideo = /\.(mp4|mov|webm)$/i.test(src);
+  if (isVideo) {
+    vid.src = src;
+    img.style.display = 'none';
+    vid.style.display = 'block';
+    vid.load();
+    vid.play().catch(function(){});
+  } else {
+    vid.pause();
+    vid.src = '';
+    vid.style.display = 'none';
+    img.style.display = 'block';
+    img.src = src;
+  }
+}
+
+function studioSelectPiece(idx) {
+  studioCurrent = idx;
+  studioView = 0;
+  var piece = studioPieces[idx];
+  studioShowMedia(piece.imgs[0]);
+  var nameEl = document.getElementById('studio-piece-name');
+  var dimsEl = document.getElementById('studio-piece-dims');
+  if (nameEl) nameEl.textContent = piece.name;
+  if (dimsEl) dimsEl.textContent = piece.dims;
+  document.querySelectorAll('#studio-piece-strip .archive-thumb').forEach(function(t, i) {
+    t.classList.toggle('active', i === idx);
+  });
+  var viewStrip = document.getElementById('studio-view-strip');
+  if (viewStrip) {
+    viewStrip.innerHTML = '';
+    piece.imgs.forEach(function(src, i) {
+      var t = document.createElement('div');
+      t.className = 'archive-thumb' + (i === 0 ? ' active' : '');
+      t.onclick = (function(vi) { return function() { studioSelectView(vi); }; })(i);
+      var isVid = /\.(mp4|mov|webm)$/i.test(src);
+      t.innerHTML = isVid
+        ? '<video src="' + src + '" muted playsinline preload="metadata"></video>'
+        : '<img src="' + src + '" alt="" loading="lazy">';
+      viewStrip.appendChild(t);
+    });
+  }
+  var pieceStrip = document.getElementById('studio-piece-strip');
+  if (pieceStrip) {
+    var activeThumb = pieceStrip.querySelectorAll('.archive-thumb')[idx];
+    if (activeThumb) activeThumb.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+}
+
+function studioSelectView(idx) {
+  studioView = idx;
+  var src = studioPieces[studioCurrent].imgs[idx];
+  studioShowMedia(src);
+  document.querySelectorAll('#studio-view-strip .archive-thumb').forEach(function(t, i) {
+    t.classList.toggle('active', i === idx);
+  });
+}
+
+var archiveVids = [
+  { src: "images/archive/were.still.here.mp4", label: "WE'RE STILL HERE" },
+  { src: "images/archive/illest.norcal.mp4",     label: "ILLEST NOR CAL" },
+  { src: "images/archive/Lil.diddy.mp4",         label: "LIL DIDDY" },
+  { src: "images/archive/style.monarchs.mp4",         label: "STYLE.MONARCHS" }
+];
+
+function vidShow(idx) {
+  var strip = document.getElementById('archive-vid-strip');
+  if (strip) {
+    strip.querySelectorAll('.archive-thumb').forEach(function(t, i) {
+      t.classList.toggle('active', i === idx);
+    });
+    var active = strip.querySelectorAll('.archive-thumb')[idx];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  var mainVid = document.getElementById('archive-main-vid');
+  if (mainVid) {
+    mainVid.src = archiveVids[idx].src;
+    mainVid.load();
+    mainVid.play().catch(function(){});
+  }
+}
+
+var capData = {
+  'nene':   ['images/trade/cafe nene/nene.3.jpg','images/trade/cafe nene/nene.1.png','images/trade/cafe nene/nene.2.png','images/trade/cafe nene/nene.4.png','images/trade/cafe nene/nene.5.png'],
+  'uplift': ['images/trade/Island Uplift/island.uplift.storefront.png','images/trade/Island Uplift/island.uplift.softgels.jar.JPG','images/trade/Island Uplift/island.uplift.softgel.label.png','images/trade/Island Uplift/Island.Uplift.10PK.Label.Final.Draft.png','images/trade/Island Uplift/island.uplift.loyalty.1.png','images/trade/Island Uplift/island.uplift (2).JPG']
+};
+
+function capShow(id, idx) {
+  var strip = document.getElementById(id + '-strip');
+  if (strip) {
+    strip.querySelectorAll('.archive-thumb').forEach(function(t, i) {
+      t.classList.toggle('active', i === idx);
+    });
+    var active = strip.querySelectorAll('.archive-thumb')[idx];
+    if (active) {
+      var col = strip;
+      var colRect = col.getBoundingClientRect();
+      var elRect = active.getBoundingClientRect();
+      col.scrollTop += elRect.top - colRect.top - (col.clientHeight - active.offsetHeight) / 2;
+    }
+  }
+  var mainImg = document.getElementById(id + '-main');
+  if (mainImg) mainImg.src = capData[id][idx];
+}
+
+// Skills dropdown click toggle
+document.querySelectorAll('.skills-btn').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    var expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    var list = document.getElementById(this.getAttribute('aria-controls'));
+    if (list) list.setAttribute('aria-hidden', String(expanded));
+  });
+  document.addEventListener('click', function(e) {
+    if (!btn.closest('.skills-wrap').contains(e.target)) {
+      btn.setAttribute('aria-expanded', 'false');
+      var list = document.getElementById(btn.getAttribute('aria-controls'));
+      if (list) list.setAttribute('aria-hidden', 'true');
+    }
+  });
+});
+</script>
+<footer class="site-footer">JEFFREY MICHAEL HARRIS</footer>
+</body>
+</html>
