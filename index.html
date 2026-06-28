@@ -549,6 +549,7 @@ nav {
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 .studio-piece-col::-webkit-scrollbar,
 .studio-view-col::-webkit-scrollbar,
@@ -759,7 +760,7 @@ nav {
 #trade > * { position: relative; z-index: 1; }
 
 /* ─── SKILLS DROPDOWN ─── */
-.trade-body { display: flex; align-items: flex-start; justify-content: flex-end; gap: 2rem; padding: 0 2rem 1.5rem; }
+.trade-body { display: flex; align-items: flex-start; justify-content: center; gap: 2rem; padding: 0 2rem 1.5rem; position: relative; z-index: 10; }
 .skills-wrap { position: relative; flex-shrink: 0; }
 .skills-btn {
   display: inline-flex; align-items: center; gap: 0.5rem;
@@ -1952,7 +1953,7 @@ footer::before {
         </div>
       </div>
     </div>
-    <div class="archive-main">
+    <div class="archive-main" onclick="archiveToggle()" style="cursor:pointer;" title="Click to pause / resume">
       <img id="archive-main-img" src="images/archive/anacortes.1.JPG" alt="">
     </div>
   </div>
@@ -2229,7 +2230,7 @@ function archiveShow(el) {
   if (col) {
     var colRect = col.getBoundingClientRect();
     var elRect = el.getBoundingClientRect();
-    col.scrollTop += elRect.top - colRect.top - (col.clientHeight - el.offsetHeight) / 2;
+    col.scrollTo({ top: col.scrollTop + elRect.top - colRect.top - (col.clientHeight - el.offsetHeight) / 2, behavior: 'smooth' });
   }
   if (typeof archiveStartTimer === 'function') archiveStartTimer();
 }
@@ -2257,6 +2258,12 @@ function archivePause() {
 function archiveToggle() {
   if (archiveIsPlaying) { archivePause(); } else { archiveStartTimer(); }
 }
+document.addEventListener('keydown', function(e) {
+  if (e.code === 'Space' && document.getElementById('style') && document.getElementById('style').classList.contains('active')) {
+    e.preventDefault();
+    archiveToggle();
+  }
+});
 
 const HOME_SLIDE_COUNT = 2;
 let homeSlideIdx = 0;
